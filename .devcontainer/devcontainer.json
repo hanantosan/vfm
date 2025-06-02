@@ -1,7 +1,7 @@
 {
-  "name": "Flutter Dev Container",
-  "image": "mcr.microsoft.com/devcontainers/dotnet:0-6.0",
-  "postCreateCommand": "git clone https://github.com/flutter/flutter.git -b stable && echo 'export PATH=\"$PATH:/workspaces/${{containerWorkspaceFolderBasename}}/flutter/bin\"' >> ~/.bashrc && source ~/.bashrc && flutter doctor",
+  "name": "Flutter Codespace",
+  "image": "mcr.microsoft.com/devcontainers/base:ubuntu",
+  "postCreateCommand": "apt-get update && apt-get install -y git curl unzip xz-utils zip && git clone https://github.com/flutter/flutter.git -b stable && echo 'export PATH=\"$PATH:/workspaces/$(basename `pwd`)/flutter/bin\"' >> ~/.bashrc && source ~/.bashrc && flutter doctor",
   "customizations": {
     "vscode": {
       "extensions": [
